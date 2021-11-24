@@ -1,4 +1,4 @@
-# 冷蔵庫 モデルAのクラス
+# 冷蔵庫モデルのクラス
 class ReizoukoA
   # 設定温度を受け取ってインスタンス変数に保持する
   def initialize(num)
@@ -34,11 +34,8 @@ class ReizoukoA
     @foodstuff << str
   end
 
-  # 電源オン
-  def power(onoff)
-    puts '電源を入れました' if onoff.to_sym == :on
-    puts '電源を切りました' if onoff.to_sym == :off
-  end
+  # 電源オンオフ機能をインクルード（Mix-in)
+  include Power
 end
 
 # 実行制御
